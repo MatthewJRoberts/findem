@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="files/css/style.css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,800" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="overlay"></div>
+
+        <div class="panel">
+            <header>
+                <div class="icon">
+                    <img src="files/media/icon_c.png" />
+                </div>
+                <div class="text">
+                    Enter Details
+                </div>
+            </header>
+            <main>
+                <div id="sections">
+                    <!-- Details -->
+                    <section>
+                        <p>
+                            Nickname:
+                            <input type="text" id="name"/>
+                        </p>
+                        <div class="account">
+                            <div class="input">
+                                <input type="text" placeholder="Enter Steam URL ID" id="steam"/>
+                            </div>
+                            <div class="add" onclick="AddAccount('steam', document.querySelector('#steam').value);" id="steamaction">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                        </div>
+                        <div class="preview">
+                            <div class="image">
+                                <img src="" id="preview_image" style="display: none;" />
+                            </div>
+                            <div class="text">
+                                <p id="preview_name" style="display: none;" ></p>
+                            </div>
+                        </div>
+                        <p>
+                            <button onclick="progressBack()">Continue</button>
+                        </p>
+                    </section>
+                    <!-- Game -->
+                    <section>
+                        <div class="central large">
+                            <p>
+                                <h2>SELECT A GAME</h2>
+                            </p>
+                            <div class="games" id="allgames">
+                                <div class="game_container">
+                                    <div class="game"></div>
+                                    <p>Game Title</p>
+                                </div>
+                            </div>
+                            <p>
+                                <button onclick="progressBack(true)">Back to Details</button>
+                            </p>
+                        </div>
+                    </section>
+                    <!-- Region -->
+                    <section>
+                        <div class="central">
+                            <p>
+                                <h2>SELECT REGIONS</h2>
+                            </p>
+                            <p>
+                                <h3 onclick="modData('region','EU'); progressBack();">EU</h3>
+                                <h3 onclick="modData('region','NA'); progressBack();">NA</h3>
+                                <h3 onclick="modData('region','SA'); progressBack();">SA</h3>
+                                <h3 onclick="modData('region','AU'); progressBack();">AU</h3>
+                                <h3 onclick="modData('region','ASIA'); progressBack();">Asia</h3>
+                            </p>
+                            <p>
+                                <button onclick="progressBack(true)">Back to Games</button>
+                            </p>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="central">
+                            <p>
+                                <h2>SEARCHING...</h2>
+                            </p>
+                            <div class="outer" id="players">
+                                
+                            </div>
+                            <p>
+                                <button onclick="CancelSearch()">Cancel</button>
+                            </p>
+                        </div>
+                    </section>
+                </div>
+                <div id="error"></div>
+            </main>
+        </div>
+        
+        <video width="100%" height="100%" autoplay="" loop="">
+            <source src="./files/media/bg.mp4">
+        </video>
+
+        <script src="files/js/main.js"></script>
+    </body>
+</html>

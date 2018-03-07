@@ -1,0 +1,220 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+
+    color: #e0ded4;
+    overflow: hidden;
+}
+
+button {
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    padding: 0.6em 1em;
+    font-size: 1em;
+
+    background-color: rgba(0,0,0,0);
+    border: none;
+    background-image: url(../media/button.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+button:focus {
+    outline: none;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #A5A5A5;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #A5A5A5;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #A5A5A5;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #A5A5A5;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+}
+
+section {
+    display: none;
+}
+.active {
+    display: block;
+}
+
+div.games {
+    display: flex;
+    flex-wrap: wrap;
+}
+div.games div.game {
+    width: 110px;
+    height: 150px;
+    background: #1E58E8;
+    background-position: 50% 50%;
+    background-size: cover;
+    cursor: pointer;
+}
+div.games div.game_container {
+    padding: 1em;
+}
+
+div.outer {
+    padding: 0.5em;
+    box-sizing: border-box;
+    background-color: rgba(0,0,0,0.1);
+}
+div.inner {
+    padding: 0.5em;
+    box-sizing: border-box;
+    margin-bottom: 0.5em;
+    display: grid;
+    grid-template-columns: max-content auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "image text";
+    align-content: center;
+    align-items: center;
+}
+div.inner div.image { grid-area: image; }
+div.inner div.text { grid-area: text; text-align: left; }
+
+div.inner div.text a {
+    color: #e0ded4;
+    padding-left: 1em;
+}
+
+div.inner:last-of-type {
+    margin: 0;
+}
+
+div.account {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto max-content;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "input add";
+
+    align-content: center;
+    align-items: center;
+}
+div.account div.input { grid-area: input; }
+div.account div.add { grid-area: add; }
+
+div.account div.input input[type="text"] {
+    width: 100%;
+}
+
+div.add {
+    display: block;
+    padding: 1em;
+    cursor: pointer;
+}
+
+div.overlay {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    background-image: url(../media/bg.png);
+    background-size: cover;
+    background-position: center top;
+    pointer-events: none;
+    top: 0;
+}
+
+video {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    min-width: 100%; 
+    min-height: 100%; 
+    width: auto; 
+    height: auto;
+    z-index: -1000; 
+    overflow: hidden;
+}
+
+div.panel {
+    width: 630px;
+    height: 700px;
+    background-image: url('../media/panel.png');
+    margin: 0 auto;
+    margin-top: 12em;
+}
+
+div.panel header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "icon text";
+    align-content: center;
+    align-items: center;
+    padding-top: 1.3em;
+    padding-left: 1.75em;
+}
+div.panel header div.icon { grid-area: icon; }
+div.panel header div.text { grid-area: text; }
+
+div.panel main {
+    padding: 1em 6em;
+    text-align: center;
+}
+
+div.panel p {
+    letter-spacing: 0.1em;
+}
+
+input[type="text"] {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding: 1em;
+    background: rgba(0,0,0,0.0);
+    border: none;
+    border-bottom: solid 1px #e0ded4;
+    
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8em;
+    color: #e0ded4;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    background: rgba(0,0,0,0.1);
+}
+
+div.preview {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: max-content auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "image text";
+    align-content: center;
+    align-items: center;
+}
+div.preview div.image {
+    grid-area: image;
+}
+div.preview div.text {
+    grid-area: text;
+    text-align: left;
+    padding-left: 1em;
+}
